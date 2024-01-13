@@ -1,6 +1,7 @@
-export default {
-
-    matches:{
+export default 
+{
+    matches:[
+        {
         "gameId":1,
         "homeTeam":"Benfica",
         "awayTeam":"Sporting",
@@ -35,5 +36,6 @@ export default {
         "events": [
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Coates S."}
         ]
-    }
+    },
+    ]
 }

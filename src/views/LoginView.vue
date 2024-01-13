@@ -59,16 +59,16 @@ export default {
       confirmPassword: "",
       errorMessage: "",
       userStore: UserStore(),
+
     };
   },
   methods: {
-    onSubmit() {
+    async onSubmit() {
       this.errorMessage = "";
 
       const user = this.userStore.getUsers.find(
         (user) => user.username === this.username && user.password === this.password
       );
-      console.log(this.userStore.getUsers);
 
       if (!user) {
         this.errorMessage = "Username ou password errados";
