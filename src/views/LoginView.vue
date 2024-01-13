@@ -1,28 +1,31 @@
 <template>
   <div>
-    <h1 id="Title">Login</h1>
-    <form @submit.prevent="onSubmit" id="Login">
-      <input type="text" v-model="username" placeHolder="Username" required/>
-      <br>
-      <input type="password" v-model="password" placeHolder="Password"required />
-      <br>
-      <p>{{ errorMessage }}</p>
-      <button type="submit">Login</button>
-      <p @click="(event) => ChangeLogin(event)">Register</p>
-    </form>
-    <form @submit.prevent="createAccount" id="Register">
-      <input type="text" v-model="username" placeHolder="Username"required />
-      <br>
-      <input type="email" v-model="email" placeHolder="Email" required/>
-      <br>
-      <input type="password" v-model="password" placeHolder="Password" required/>
-      <br>
-      <input type="password" v-model="confirmPassword" placeHolder="Confirm Password" required/>
-      <br>
-      <p>{{ errorMessage }}</p>
-      <button type="submit">Register</button>
-      <p @click="(event) => ChangeLogin(event)">Login</p>
-    </form>
+    <div id="box">
+      <form @submit.prevent="onSubmit" id="Login">
+        <h1 id="Title">Sign In</h1>
+        <input id="username" type="text" v-model="username" placeHolder="Username" required/>
+        <br>
+        <input id="passsword" type="password" v-model="password" placeHolder="Password" required />
+        <br>
+        <p>{{ errorMessage }}</p>
+        <button type="submit">Sign In</button>
+        <button @click="(event) => ChangeLogin(event)">Sign Up</button>
+      </form> 
+    </div>
+      <form @submit.prevent="createAccount" id="Register">
+        <input type="text" v-model="username" placeHolder="Username" required />
+        <br>
+        <input type="email" v-model="email" placeHolder="Email" required/>
+        <br>
+        <input type="password" v-model="password" placeHolder="Password" required/>
+        <br>
+        <input type="password" v-model="confirmPassword" placeHolder="Confirm Password" required/>
+        <br>
+        <p>{{ errorMessage }}</p>
+        <button type="submit">Register</button>
+        <button @click="(event) => ChangeLogin(event)">Login</button>
+      </form>
+   
   </div>
 </template>
 
@@ -102,10 +105,85 @@ export default {
 <style>
 #Login {
   display: block;
+  background-color: #263154;
+  border-radius: 30px;
+  height: 1024px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 1090px;
+  text-align: center;
 }
+
 
 #Register {
   display: none;
 }
+
+#Title{
+color: #FFF;
+font-family: Gelasio;
+font-size: 55px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: 310px;
+margin-bottom: 38px;
+}
+
+
+label {
+  display: block;
+  margin-top: 20px;
+}
+
+input[type="text"], input[type="password"] {
+  padding: 10px;
+  margin-top: 46px;
+  width: 634px;
+  height: 59px;
+  border-radius: 10px;
+  background-color:  #9CAAD3;
+  color: rgba(0, 0, 0, 0.60);
+  font-family: DM Sans;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+button[type="submit"] {
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  width: 232px;
+  height: 59px;
+  border-radius: 10px;
+  background-color: #566CB3;
+}
+
+button {
+  color: white;
+  padding: 10px;
+  border: none;
+  margin-top: 47px;
+  margin-left: 84px;
+  margin-right: 84px;
+  cursor: pointer;
+  width: 232px;
+  height: 59px;
+  border-radius: 10px;
+  background-color: #566CB3;
+  color: #FFF;
+  font-family: DM Sans;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
 
 </style>
