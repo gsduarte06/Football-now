@@ -3,9 +3,9 @@
     <div id="box">
       <form @submit.prevent="onSubmit" id="Login">
         <h1 id="Title">Sign In</h1>
-        <input id="username" type="text" v-model="username" placeHolder="Username" required/>
+        <input id="username_signin" type="text" v-model="username" placeHolder="Username" required/>
         <br>
-        <input id="passsword" type="password" v-model="password" placeHolder="Password" required />
+        <input id="passsword_signin" type="password" v-model="password" placeHolder="Password" required />
         <br>
         <p>{{ errorMessage }}</p>
         <button type="submit">Sign In</button>
@@ -13,6 +13,7 @@
       </form> 
     </div>
       <form @submit.prevent="createAccount" id="Register">
+        <h1 id="Title2">Sign Up</h1>
         <input type="text" v-model="username" placeHolder="Username" required />
         <br>
         <input type="email" v-model="email" placeHolder="Email" required/>
@@ -22,8 +23,8 @@
         <input type="password" v-model="confirmPassword" placeHolder="Confirm Password" required/>
         <br>
         <p>{{ errorMessage }}</p>
-        <button type="submit">Register</button>
-        <button @click="(event) => ChangeLogin(event)">Login</button>
+        <button id="button_signup" type="submit">Register</button>
+        <button id="button_signup" @click="(event) => ChangeLogin(event)">Login</button>
       </form>
    
   </div>
@@ -105,19 +106,25 @@ export default {
 <style>
 #Login {
   display: block;
-  background-color: #263154;
-  border-radius: 30px;
+  border-radius: 30px 0px 0px 30px;
+  background: var(--2-Blue-boxes, #263154);
   height: 1024px;
   left: 0;
   position: fixed;
   top: 0;
   width: 1090px;
   text-align: center;
+  margin-left: 788px;
 }
 
 
 #Register {
+  margin-left: -325px;
   display: none;
+  width: 1440px;
+  height: 1024px;
+  background: rgba(86, 108, 179, 0.60);
+  text-align: center;
 }
 
 #Title{
@@ -131,13 +138,23 @@ margin-top: 310px;
 margin-bottom: 38px;
 }
 
+#Title2{
+color: #FFF;
+font-family: Gelasio;
+font-size: 55px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding-top: 206px;
+margin-bottom: 38px;
+}
 
 label {
   display: block;
   margin-top: 20px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"], input[type="password"], input[type="email"] {
   padding: 10px;
   margin-top: 46px;
   width: 634px;
@@ -182,6 +199,11 @@ button {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+}
+
+#button_signup{
+  border-radius: 10px;
+background: var(--2-Blue-boxes, #263154);
 }
 
 
