@@ -59,7 +59,6 @@ export default {
       confirmPassword: "",
       errorMessage: "",
       userStore: UserStore(),
-
     };
   },
   methods: {
@@ -78,7 +77,7 @@ export default {
       // Guardar o id do utilizador na store e redirecionar para a Home
       this.userStore.setLoggedInUser(this.username);
 
-      this.$router.push({ name: "Landing" });
+      this.$router.push({ name: "Main" });
     },
 
     createAccount() {
@@ -120,9 +119,8 @@ export default {
 
 <style>
 #Login {
-  display: inline-block;
+  display: block;
   background-color: #263154;
-
   height: 100vh;
   left: 0;
   position: fixed;
@@ -144,7 +142,7 @@ export default {
 
 #Title {
   color: #fff;
-  font-family: Gelasio;
+
   font-size: 55px;
   font-style: normal;
   font-weight: 400;
@@ -154,13 +152,13 @@ export default {
 }
 #TitleRegister {
   color: #fff;
-  font-family: Gelasio;
+
   font-size: 55px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin-bottom: 38px;
-  margin-top: 15vh;
+  margin-top: 10vh;
 }
 label {
   display: block;
@@ -175,7 +173,7 @@ input {
   border-radius: 10px;
   background-color: #9caad3;
   color: rgba(0, 0, 0, 0.6);
-  font-family: DM Sans;
+
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -207,7 +205,7 @@ button {
   border-radius: 10px;
   background-color: #566cb3;
   color: #fff;
-  font-family: DM Sans;
+
   font-size: 36px;
   font-style: normal;
   font-weight: 400;
@@ -215,7 +213,6 @@ button {
 }
 
 p {
-  font-family: DM Sans;
   font-size: 36px;
   font-style: normal;
   font-weight: 400;

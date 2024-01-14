@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import Landing from '../views/LandingView.vue'
 import Login from '../views/LoginView.vue'
 import Game from '../views/GameView.vue'
-
+import Main from '../views/MainView.vue'
 
 
 const router = createRouter({
@@ -30,6 +30,14 @@ const router = createRouter({
       component: Game,
       meta: {
         title: 'Game'
+      }
+    },
+    {
+      path: '/main',
+      name: 'Main',
+      component: Main,
+      meta: {
+        title: 'Main'
       }
     }
   ]
