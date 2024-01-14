@@ -1,7 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Landing from '../views/LandingView.vue'
 import Login from '../views/LoginView.vue'
+<<<<<<< Updated upstream
 import { UserStore } from '@/stores/users'
+=======
+import Game from '../views/GameView.vue'
+import Main from '../views/MainView.vue'
+>>>>>>> Stashed changes
 
 
 const router = createRouter({
@@ -22,6 +27,25 @@ const router = createRouter({
       meta: {
         title: 'Login'
       }
+<<<<<<< Updated upstream
+=======
+    },
+    {
+      path: '/game',
+      name: 'Game',
+      component: Game,
+      meta: {
+        title: 'Game'
+      }
+    },
+    {
+      path: '/main',
+      name: 'Main',
+      component: Main,
+      meta: {
+        title: 'Main'
+      }
+>>>>>>> Stashed changes
     }
   ]
 })
