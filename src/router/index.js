@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Landing from '../views/LandingView.vue'
 import Login from '../views/LoginView.vue'
-import { UserStore } from '@/stores/users'
+import Game from '../views/GameView.vue'
+
 
 
 const router = createRouter({
@@ -21,6 +22,14 @@ const router = createRouter({
       component: Login,
       meta: {
         title: 'Login'
+      }
+    },
+    {
+      path: '/game',
+      name: 'Game',
+      component: Game,
+      meta: {
+        title: 'Game'
       }
     }
   ]
