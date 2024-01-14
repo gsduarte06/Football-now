@@ -142,7 +142,6 @@ export default {
 
 #Title {
   color: #fff;
-
   font-size: 55px;
   font-style: normal;
   font-weight: 400;
@@ -152,7 +151,6 @@ export default {
 }
 #TitleRegister {
   color: #fff;
-
   font-size: 55px;
   font-style: normal;
   font-weight: 400;

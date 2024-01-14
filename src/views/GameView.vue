@@ -383,7 +383,7 @@
     </div>
 
     <div id="switch"></div>
-    ~
+
     <footer></footer>
   </div>
 </template>
@@ -493,7 +493,7 @@ export default {
   border-radius: 0px 15px 15px 15px;
   border: 5px solid var(--1-border-orange, #ff8730);
   background: var(--1-blue-boxes, #010d34);
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 footer {

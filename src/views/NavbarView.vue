@@ -1,6 +1,18 @@
-<template>
+<template >
+
+<div id="mySidenav" class="sidenav">
+<div class="TopNav">
+    <img src="@\assets\football-now.png" alt="">
+<p class = "titleNavBar">Football Now</p>
+</div>
+
+  <a @click="navigate('Main')"><p>Home</p></a>
+  <a @click="navigate('About')"><p>About</p></a>
+  <a @click="navigate('News')"><p>News</p></a>
+  <a @click="navigate('Matches')"><p>Matches</p></a>
+</div>
   <div id="TopBar">
-    <svg id="Navbar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91 58" fill="none">
+    <svg id="Navbar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 91 58" fill="none" @click="openNav()">
       <rect width="90.2222" height="12.8889" fill="#D9D9D9" />
       <rect y="45.1111" width="90.2222" height="12.8889" fill="#D9D9D9" />
       <rect y="22.5557" width="90.2222" height="12.8889" fill="#D9D9D9" />
@@ -45,11 +57,33 @@
 
     </div>
   </div>
+
 </template>
 
-<script></script>
+<script>
+export default {
+    methods: {
+    openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.addEventListener("mouseup", e => {
+      if( !(e.target.nodeName === "a")){
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    })
+},
+
+navigate(Page){
+    this.$router.push({ name: `${Page}` });
+},
+    },
+
+}
+
+</script>
 
 <style>
+
+
 #TopBar {
   display: flex;
   align-items: center;
@@ -89,9 +123,60 @@
   height: 3vh;
 }
 
-#User {
-margin-left:100px;
+#User { 
+    margin-left:100px;
   height: 7vh;
 
 }
+
+
+/* SideNav */
+/* The side navigation menu */
+.sidenav {
+  height: 100%; 
+  width: 0; 
+  position: fixed; 
+  z-index: 1; 
+  top: 0; 
+  left: 0;
+  background-color:  #2F3F73; 
+  overflow-x: hidden; 
+  transition: 0.5s; 
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #fff;
+  background: #566CB3;
+  display: block;
+  transition: 0.3s;
+  border-top: 1px solid #000;
+}
+.sidenav img{
+    height: 75px;
+    width: 75px;
+    padding: 10px;
+
+}
+
+.titleNavBar{
+    height: 66px;
+    width: 131px;
+    text-decoration: none;
+      transition: 0.3s;
+    color: #fff;
+    font-size: 24px;
+    float:right
+}
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+
+
+
 </style>
