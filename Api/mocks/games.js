@@ -33,6 +33,16 @@ export default
             {"number":9,"name":"Gyokeres V.", "GR":false, "C" :false},
             {"number":8,"name":"Gonçalves P.", "GR":false, "C" :false},
         ],
+        "stats":[{   
+                "homeBallPossession":50,
+                "homeGoalAttempts" : 1, "awayGoalAttempts":2,
+                "homeShotsOnGoal" : 0, "awayShotsOnGoal": 1,
+                "homeShotsOffGoal" : 1, "awayShotsOffGoal": 1,
+                "homeCornerKicks": 0, "awayCornerKicks":0,
+                "homeYellow": 0, "awayYellow": 1,
+                "homeFouls": 0, "awayFouls": 2,
+                "homePasses": 20, "awayPasses": 25
+        }],
         "events": [
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Coates S.", "minute": 15}
         ]
@@ -69,6 +79,16 @@ export default
             {"number":9,"name":"Gyokeres V.", "GR":false, "C" :false},
             {"number":8,"name":"Gonçalves P.", "GR":false, "C" :false},
         ],
+        "stats":[{   
+            "homeBallPossession":55,
+            "homeGoalAttempts" : 1, "awayGoalAttempts":2,
+            "homeShotsOnGoal" : 0, "awayShotsOnGoal": 1,
+            "homeShotsOffGoal" : 1, "awayShotsOffGoal": 1,
+            "homeCornerKicks": 1, "awayCornerKicks":0,
+            "homeYellow": 0, "awayYellow": 2,
+            "homeFouls": 0, "awayFouls": 3,
+            "homePasses": 40, "awayPasses": 35
+    }],
         "events": [
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Coates S.", "minute": "15'"},
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Inacio G.", "minute": "22'"}
@@ -106,6 +126,16 @@ export default
             {"number":9,"name":"Gyokeres V.", "GR":false, "C" :false},
             {"number":8,"name":"Gonçalves P.", "GR":false, "C" :false},
         ],
+        "stats":[{   
+            "homeBallPossession":52,
+            "homeGoalAttempts" : 3, "awayGoalAttempts":4,
+            "homeShotsOnGoal" : 1, "awayShotsOnGoal": 2,
+            "homeShotsOffGoal" : 2, "awayShotsOffGoal": 2,
+            "homeCornerKicks": 1, "awayCornerKicks":2,
+            "homeYellow": 0, "awayYellow": 2,
+            "homeFouls": 0, "awayFouls": 3,
+            "homePasses": 40, "awayPasses": 45
+    }],
         "events": [
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Coates S.", "minute": "15'"},
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Inacio G.", "minute": "22'"},
@@ -144,6 +174,16 @@ export default
             {"number":9,"name":"Gyokeres V.", "GR":false, "C" :false},
             {"number":8,"name":"Gonçalves P.", "GR":false, "C" :false},
         ],
+        "stats":[{   
+            "homeBallPossession":45,
+            "homeGoalAttempts" : 3, "awayGoalAttempts":5,
+            "homeShotsOnGoal" : 1, "awayShotsOnGoal": 2,
+            "homeShotsOffGoal" : 2, "awayShotsOffGoal": 3,
+            "homeCornerKicks": 1, "awayCornerKicks":2,
+            "homeYellow": 0, "awayYellow": 3,
+            "homeFouls": 0, "awayFouls": 4,
+            "homePasses": 45, "awayPasses": 55
+    }],
         "events": [
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Coates S.", "minute": "15'"},
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Inacio G.", "minute": "22'"},
