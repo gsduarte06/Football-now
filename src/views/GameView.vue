@@ -377,9 +377,9 @@
       <img src="@\assets\football_field.png" alt="" />
     </div>
     <div id="headersStats">
-      <div id="summary">SUMMARY</div>
-      <div id="stats">STATS</div>
-      <div id="lineups">LINEUPS</div>
+      <div id="summary"><p>SUMMARY</p></div>
+      <div id="stats"><p>STATS</p></div>
+      <div id="lineups"><p>LINEUPS</p></div>
     </div>
 
     <div id="switch"></div>
@@ -399,38 +399,40 @@ export default {
 </script>
 
 <style>
-#Navbar {
-  padding-top: 5vh;
-}
-
 #background {
   background-color: #131426;
   height: auto;
-  width: 100vw;
-}
-
-#teams {
-  width: 40vw;
-  height: 10vh;
-  padding-top: 21vh;
-  margin-left: 30vw;
-  margin-right: 25vw;
-}
-
-#Resultado {
-  width: 5vw;
-  height: 5vh;
-  border-radius: 15px;
-  background: var(--1-border-orange, #ff8730);
-  margin-left: 18vw;
-  margin-top: -11vh;
-  text-align: center;
-  color: #fff;
-
+  width: auto;
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+}
+
+#teams {
+  display: flex;
+  width: 40vw;
+  height: 10vh;
+  padding-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 100px;
+  justify-content: space-between;
+}
+
+#Resultado {
+  display: block;
+  width: 6vw;
+  height: 6vh;
+  border-radius: 15px;
+  background: var(--1-border-orange, #ff8730);
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+#Resultado p {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 #Benfica {
@@ -439,10 +441,8 @@ export default {
 }
 
 #Sporting {
-  float: right;
   width: 12vw;
   height: 10vh;
-  margin-top: -8vh;
 }
 
 #field {
@@ -450,7 +450,6 @@ export default {
   height: 600px;
   position: relative;
   margin-left: 26vw;
-  margin-top: 10vh;
 }
 
 #summary,
@@ -464,11 +463,6 @@ export default {
   border-left: 5px solid var(--1-border-orange, #ff8730);
   background: var(--1-blue-boxes, #010d34);
   color: #fff;
-
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
   text-align: center;
 }
 #headersStats {
@@ -477,16 +471,21 @@ export default {
 
 #summary {
   margin-left: 16vw;
-  margin-bottom: -6.7vh;
+  margin-bottom: -7vh;
 }
 #stats {
-  margin-left: 27.6vw;
-  margin-bottom: -6.7vh;
+  margin-left: 28vw;
+  margin-bottom: -7vh;
 }
 #lineups {
-  margin-left: 39.1vw;
+  margin-left: 40vw;
 }
 
+#summary p,
+#stats p,
+#lineups p {
+  margin-top: 10px;
+}
 #switch {
   margin-left: 16vw;
   width: 1240px;
