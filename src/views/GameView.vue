@@ -1,8 +1,6 @@
 <template>
   <div id="background">
-    <div id="Topbar">
-      <Navbar />
-    </div>
+    <Navbar></Navbar>
     <div id="teams">
       <svg
         id="Benfica"
@@ -376,24 +374,7 @@
       </svg>
     </div>
     <div id="field">
-      <div id="big">
-        <div id="topright"></div>
-        <div id="topleft"></div>
-        <div id="downleft"></div>
-        <div id="downright"></div>
-        <div id="mid"></div>
-        <div id="circle"></div>
-        <div id="smallarearight"></div>
-        <div id="goalright"></div>
-        <div id="bigarealeft"></div>
-        <div id="bigarearight"></div>
-        <div id="smallarealeft"></div>
-        <div id="circlearealeft"></div>
-        <div id="circlearearight"></div>
-        <div id="goalleft"></div>
-        <div id="penaltyright"></div>
-        <div id="penaltyleft"></div>
-      </div>
+      <img src="@\assets\football_field.png" alt="" />
     </div>
     <div id="headersStats">
       <div id="summary">SUMMARY</div>
@@ -402,7 +383,8 @@
     </div>
 
     <div id="switch"></div>
-    <!-- <footer></footer> -->
+    ~
+    <footer></footer>
   </div>
 </template>
 
@@ -417,22 +399,20 @@ export default {
 </script>
 
 <style>
-#background {
-  background-color: #131426;
-  font-family: DM Sans;
-  margin-left: -17.2vw;
-  height: 290vh;
-  width: 99vw;
+#Navbar {
+  padding-top: 5vh;
 }
 
-#Topbar {
-  margin-top: 3vh;
+#background {
+  background-color: #131426;
+  height: auto;
+  width: 100vw;
 }
 
 #teams {
   width: 40vw;
   height: 10vh;
-  margin-top: 20vh;
+  padding-top: 21vh;
   margin-left: 30vw;
   margin-right: 25vw;
 }
@@ -443,10 +423,10 @@ export default {
   border-radius: 15px;
   background: var(--1-border-orange, #ff8730);
   margin-left: 18vw;
-  margin-top: -8vh;
+  margin-top: -11vh;
   text-align: center;
   color: #fff;
-  font-family: DM Sans;
+
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -462,168 +442,15 @@ export default {
   float: right;
   width: 12vw;
   height: 10vh;
-  margin-top: -7.5vh;
+  margin-top: -8vh;
 }
 
 #field {
-  width: 100%;
-  height: 100%;
+  width: 900px;
+  height: 600px;
   position: relative;
-  width: 50vw;
-  height: 60vh;
-  background: #56740f;
-  margin-left: 24.7vw;
+  margin-left: 26vw;
   margin-top: 10vh;
-}
-
-#big,
-#topright,
-#topleft,
-#downleft,
-#downright,
-#mid,
-#circle,
-#bigarearight,
-#smallarearight,
-#goalright,
-#bigarealeft,
-#smallarealeft,
-#circlearealeft,
-#circlearearight,
-#goalleft,
-#penaltyright,
-#penaltyleft {
-  position: absolute;
-  border: 0.2vw white solid;
-}
-
-#big {
-  width: 47.5vw;
-  height: 55vh;
-  margin-top: 2.5vh;
-  margin-left: 2.5vh;
-  border-radius: 0.2vw;
-  display: block;
-}
-
-#topright {
-  margin-left: 45.6vw;
-  width: 1.6vw;
-  height: 3vh;
-  border-bottom-left-radius: 2vw;
-}
-
-#topleft {
-  width: 1.6vw;
-  height: 3vh;
-  border-bottom-right-radius: 2vw;
-}
-
-#downleft {
-  margin-top: 51.4vh;
-  width: 1.6vw;
-  height: 3vh;
-  border-top-right-radius: 2vw;
-}
-
-#downright {
-  margin-top: 51.4vh;
-  margin-left: 45.6vw;
-  width: 1.6vw;
-  height: 3vh;
-  border-top-left-radius: 2vw;
-}
-
-#mid {
-  margin-left: 23.5vw;
-  width: 0.2vw;
-  height: 54.4vh;
-}
-
-#circle {
-  width: 7vw;
-  height: 13vh;
-  margin-left: 20vw;
-  top: 20vh;
-  border-radius: 50vw;
-}
-
-#bigarearight {
-  width: 9vw;
-  height: 29.5vh;
-  margin-top: 12vh;
-  margin-left: 38.3vw;
-}
-
-#smallarearight {
-  width: 5vw;
-  height: 16vh;
-  margin-left: 42.3vw;
-  margin-top: 19vh;
-}
-
-#goalright {
-  width: 1vw;
-  height: 8vh;
-  margin-left: 46.3vw;
-  margin-top: 23vh;
-}
-
-#bigarealeft {
-  width: 9vw;
-  height: 29.5vh;
-  margin-left: -0.2vw;
-  margin-top: 12vh;
-}
-
-#smallarealeft {
-  width: 5vw;
-  height: 16vh;
-  margin-left: -0.2vw;
-  margin-top: 19vh;
-}
-
-#goalleft {
-  width: 1vw;
-  height: 8vh;
-  margin-left: -0.2vw;
-  margin-top: 23vh;
-}
-
-#circlearealeft {
-  width: 1.5vw;
-  height: 10vh;
-  margin-left: 8.7vw;
-  margin-top: 21.5vh;
-  border-bottom-right-radius: 30vw;
-  border-top-right-radius: 30vw;
-}
-
-#circlearearight {
-  width: 1.5vw;
-  height: 10vh;
-  margin-left: 36.9vw;
-  margin-top: 21.5vh;
-  border-bottom-left-radius: 20vw;
-  border-top-left-radius: 20vw;
-}
-
-#penaltyright,
-#penaltyleft {
-  width: 0.2vw;
-  height: 0.2vh;
-  background: #d9d9d9;
-  border-radius: 2vw;
-}
-
-#penaltyright {
-  margin-top: 26vh;
-  margin-left: 44.3vw;
-}
-
-#penaltyleft {
-  margin-left: 2.5vw;
-  margin-top: 26vh;
 }
 
 #summary,
@@ -637,13 +464,12 @@ export default {
   border-left: 5px solid var(--1-border-orange, #ff8730);
   background: var(--1-blue-boxes, #010d34);
   color: #fff;
-  font-family: DM Sans;
+
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
   text-align: center;
-  padding-top: 10px;
 }
 #headersStats {
   margin-top: 20vh;
@@ -668,11 +494,12 @@ export default {
   border-radius: 0px 15px 15px 15px;
   border: 5px solid var(--1-border-orange, #ff8730);
   background: var(--1-blue-boxes, #010d34);
+  margin-bottom: 10px;
 }
 
 footer {
-  width: 1440px;
+  width: 100%;
   height: 39px;
-  fill: var(--3-blue-boxes, #566cb3);
+  background: var(--3-blue-boxes, #566cb3);
 }
 </style>
