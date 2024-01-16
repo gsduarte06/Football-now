@@ -28,16 +28,31 @@
         </div>
       </div>
     </div>
-    <div class="block-1-container">
-      <div class="block-1-section">
-        <div class="block-1-image-section">
-          <img class="block-1-rectangle" alt="" src="../assets/images/landing-page-images/info-box-1.svg" />
-          <img class="league-logo" alt="" src="../assets/images/landing-page-images/league-logo.svg" />
-          <div class="block-1-image-section">
-            <div class="title-1">Know all about the League</div>
-            <div class="text-1">In this website you are able to follow all the hot games of the game day</div>
-          </div>
-        </div>
+    <div class="info-box-1-container">
+      <div class="images-container-1">
+        <img class="info-image-1" src="../assets/images/landing-page-images/league-logo.svg" alt="league-logo">
+      </div>
+      <div class="text-container-1">
+        <h1 class="title-1">Know all about the League</h1>
+        <p class="text-1">In this website you are able to follow all the hot games of the game day</p>
+      </div>
+    </div>
+    <div class="info-box-2-container">
+      <div class="images-container-2">
+        <img class="info-image-2" src="../assets/images/landing-page-images/football-image.svg" alt="info-image-2">
+      </div>
+      <div class="text-container-2">
+        <h1 class="title-2">Follow the games live</h1>
+        <p class="text-2">Get to know all about the games, all the fouls, the goals, the substitutions and every main event that happen during the game</p>
+      </div>
+    </div>
+    <div class="info-box-3-container">
+      <div class="images-container-3">
+        <img class="info-image-3" src="../assets/images/landing-page-images/trophy-image.svg" alt="info-image-3">
+      </div>
+      <div class="text-container-3">
+        <h1 class="title-3">Check the latest stats</h1>
+        <p class="text-3">After each game, you can still check all the stats available, know all about the result and all the important events that happened</p>
       </div>
     </div>
     <div class="social-bar">
@@ -278,71 +293,111 @@
   width: 188px;
 }
 
-.landing-page .block-1-image-section {
-position: absolute;
-top: 0px;
-left: 0px;
-width: 550px;
-height: 400px;
-mix-blend-mode: normal;
-}
-.landing-page .league-logo {
-position: absolute;
-top: 17px;
-left: 45px;
-width: 445.33px;
-height: 328px;
-overflow: hidden;
-}
 .landing-page .title-1 {
-position: absolute;
-top: 0px;
-left: 0px;
-font-weight: 800;
-display: inline-block;
-width: 675px;
-height: 61px;
-}
-.landing-page .text-1 {
-position: absolute;
-top: 69px;
-left: 0.23px;
-font-size: 32px;
-font-weight: 500;
-color: #fff;
-display: inline-block;
-width: 674.77px;
-height: 23px;
-}
-.landing-page .block-1-image-section {
-position: absolute;
-top: 80px;
-left: 560px;
-width: 675px;
-height: 92px;
-}
-.landing-page .block-1-image-section {
-position: absolute;
-top: 0px;
-left: 0px;
-width: 1235px;
-height: 400px;
-}
-.landing-page .section-1-container {
-position: absolute;
-top: 0px;
-left: 0px;
-width: 1281px;
-height: 400px;
-}
-.landing-page .block-1-container {
-  position: absolute;
-  top: 1100px; /* Adjust the top value according to your layout */
-  left: 81px;
-  width: 1281px;
-  height: auto;
-  overflow-y: auto;
-  text-align: left;
+    position: relative;
+    font-size: 48px;
+    font-weight: 800;
+    font-family: 'DM Sans';
+    color: #b8c9ff;
+    text-align: left;
+    display: inline-block;
+    width: 675px;
+    height: 61px;
+    margin-top: 1400px;
+    left: 675px;
+    bottom: 75px;
+  }
+
+  .landing-page .text-1 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 500;
+    font-family: 'DM Sans';
+    color: #fff;
+    text-align: left;
+    display: inline-block;
+    width: 674.77px;
+    height: 23px;
+    margin-top: 10px
+  }
+
+.landing-page .info-image-1 {
+    position: absolute;
+    margin-top: 1200px;
+    left: 45px;
+    width: 445.33px;
+    height: 328px;
+    overflow: hidden;
+  }
+
+.landing-page .info-image-2 {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin-top: 450px;
+    left: 350px;
 }
 
+.title-2 {
+  position: relative;
+  font-size: 48px;
+  font-weight: 800;
+  font-family: 'DM Sans';
+  color: #b8c9ff;
+  text-align: center;
+  display: inline-block;
+  width: 557.92px;
+  height: 61px;
+  bottom: 350px;
+  left: 50px;
+}
+
+.text-2 {
+  position: relative;
+  font-size: 32px;
+  font-weight: 500;
+  font-family: 'DM Sans';
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  width: 579px;
+  height: 167px;
+  bottom: 200px;
+  right: 450px;
+}
+
+.landing-page .info-page-3 {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  left: 50px;
+}
+
+.title-3 {
+  position: relative;
+  font-size: 48px;
+  font-weight: 800;
+  font-family: 'DM Sans';
+  color: #b8c9ff;
+  text-align: center;
+  display: inline-block;
+  width: 531.72px;
+  height: 67px;
+  left: 600px;
+  bottom: 500px;
+}
+
+.text-3 {
+  position: relative;
+  font-size: 32px;
+  font-weight: 500;
+  font-family: 'DM Sans';
+  color: #fff;
+  text-align: left;
+  display: inline-block;
+  width: 752px;
+  height: 224px;
+  bottom: 350px;
+  left: 120px;
+}
 </style>
