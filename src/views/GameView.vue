@@ -105,7 +105,99 @@
           </div>
         </div>
       </div>
-      <div id="lineupsContent"></div>
+      <div id="lineupsContent">
+        <div id="titleLineup">Starting Eleven</div>
+        <div id="lineupsContentInfo">
+          <div class="lineHalfLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[0].number }} {{ hometeamLineup[0].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[0].number }} {{ awayteamLineup[0].name }}</p>
+            </div>
+          </div>
+          <div class="lineLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[1].number }} {{ hometeamLineup[1].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[1].number }} {{ awayteamLineup[1].name }}</p>
+            </div>
+          </div>
+          <div class="lineHalfLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[2].number }} {{ hometeamLineup[2].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[2].number }} {{ awayteamLineup[2].name }}</p>
+            </div>
+          </div>
+          <div class="lineLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[3].number }} {{ hometeamLineup[3].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[3].number }} {{ awayteamLineup[3].name }}</p>
+            </div>
+          </div>
+          <div class="lineHalfLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[4].number }} {{ hometeamLineup[4].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[4].number }} {{ awayteamLineup[4].name }}</p>
+            </div>
+          </div>
+          <div class="lineLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[5].number }} {{ hometeamLineup[5].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[5].number }} {{ awayteamLineup[5].name }}</p>
+            </div>
+          </div>
+          <div class="lineHalfLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[6].number }} {{ hometeamLineup[6].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[6].number }} {{ awayteamLineup[6].name }}</p>
+            </div>
+          </div>
+          <div class="lineLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[7].number }} {{ hometeamLineup[7].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[7].number }} {{ awayteamLineup[7].name }}</p>
+            </div>
+          </div>
+          <div class="lineHalfLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[8].number }} {{ hometeamLineup[8].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[8].number }} {{ awayteamLineup[8].name }}</p>
+            </div>
+          </div>
+          <div class="lineLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[9].number }} {{ hometeamLineup[9].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[9].number }} {{ awayteamLineup[9].name }}</p>
+            </div>
+          </div>
+          <div class="lineHalfLineup">
+            <div class="text">
+              <p>{{ hometeamLineup[10].number }} {{ hometeamLineup[10].name }}</p>
+            </div>
+            <div class="text right">
+              <p>{{ awayteamLineup[10].number }} {{ awayteamLineup[10].name }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <footer></footer>
@@ -125,6 +217,8 @@ export default {
       awayTeam: "",
       events: [],
       score: "0-0",
+      hometeamLineup: [],
+      awayteamLineup: [],
       gameStore: UseGameStore(),
       index: 0,
     };
@@ -139,6 +233,7 @@ export default {
       document.getElementById(`${this.currentState}`).style.background = "#263154";
       document.getElementById(`${state}`).style.background = "#010D34";
       document.getElementById(`${state}Content`).style.display = "grid";
+
       this.currentState = state;
     },
 
@@ -149,6 +244,8 @@ export default {
         this.homeTeam = match.homeTeam;
         this.awayTeam = match.awayTeam;
         this.score = match.homeScore + " - " + match.awayScore;
+        this.hometeamLineup = match.startLineupHome;
+        this.awayteamLineup = match.startLineupAway;
 
         match.events.forEach((event) => {
           if (event.event === "half") {
@@ -171,8 +268,6 @@ export default {
             divPar.appendChild(divChildRight);
 
             document.getElementById("summaryContent").appendChild(divPar);
-
-            console.log("half");
           } else {
             const divPar = document.createElement("div");
             divPar.classList.add("line");
@@ -282,6 +377,7 @@ export default {
 
   mounted() {
     document.getElementById("summary").style.background = "#010D34";
+
     this.fecthData();
   },
 };
@@ -396,6 +492,7 @@ export default {
   margin-bottom: 30px;
   position: relative;
   overflow: hidden;
+  min-height: 900px;
 }
 
 footer {
@@ -415,14 +512,53 @@ footer {
   gap: 10px;
   margin: auto;
 }
+
+#lineupsContentInfo {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90%, 90%));
+  gap: 10px;
+  margin: auto;
+  margin-top: 70px;
+  width: 100%;
+}
+#lineupsContent {
+  display: grid;
+}
 #statsContent,
 #lineupsContent {
   display: none;
 }
+
+.lineHalfLineup {
+  position: relative; /* Add position relative to the container */
+  margin-left: 10%;
+
+  background-color: #263154;
+  border-radius: 10px;
+  display: inline-block;
+}
+.lineLineup {
+  position: relative; /* Add position relative to the container */
+  margin-left: 10%;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.lineHalfLineup {
+  height: 33px;
+  display: inline-block;
+}
+
+.lineLineup {
+  height: 33px;
+  display: inline-block;
+}
+
 .lineHalf {
   position: relative; /* Add position relative to the container */
   margin-left: 10%;
-  margin-top: 2vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   background-color: #263154;
   border-radius: 10px;
   display: inline-block;
@@ -430,7 +566,8 @@ footer {
 .line {
   position: relative; /* Add position relative to the container */
   margin-left: 10%;
-  margin-top: 2vh;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
   background-color: #263154 0%;
   border-radius: 10px;
   display: inline-block;
@@ -593,5 +730,17 @@ footer {
   grid-column-start: 2;
   grid-column-end: 2;
   border-radius: 0vw 2vw 2vw 0vw;
+}
+
+#titleLineup {
+  margin: auto;
+  margin-top: 3%;
+  width: 70%;
+  display: block;
+  text-align: center;
+  color: #fff;
+  font-family: "DM Sans";
+  border-radius: 15px;
+  background: #ff8730;
 }
 </style>
