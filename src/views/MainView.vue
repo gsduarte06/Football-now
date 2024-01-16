@@ -52,7 +52,7 @@ export default {
 
 #topnew {
   width: 36vw;
-  height: 30vh;
+  height: 40vh;
   border-radius: 1vw;
   background-image: url("../assets/benfica.jpg");
   margin-top: 10vh;
@@ -60,11 +60,13 @@ export default {
 }
 
 #calendar {
+margin-left: 65vw;
+margin-top: -40vh;
 }
 
 #calendarbox {
   width: 25vw;
-  height: 60vh;
+  height: 80vh;
   border-radius: 1vw;
   border: 0.3vw solid var(--2-border-orange, #eb6300);
   background: var(--2-Blue-boxes, #263154);
@@ -91,7 +93,7 @@ export default {
 #mainmatchtitle {
   width: 12vw;
   height: 4vh;
-  margin-top: -20vh;
+  margin-top: -30vh;
   margin-left: 11vw;
   background-color: #ff8730;
   border-radius: 1vw 1vw 0vw 0vw;
@@ -106,7 +108,7 @@ export default {
 
 #mainmatchbox {
   width: 35vw;
-  height: 60vh;
+  height: 70vh;
   border-radius: 1vw;
   border: 0.4vw solid #ff8730;
   background: var(--1-blue-boxes, #010d34);
@@ -210,3 +212,4 @@ footer {
   background: var(--3-blue-boxes, #566cb3);
 }
 </style>
+
