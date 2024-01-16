@@ -28,84 +28,82 @@
 
     <div id="switch">
       <div id="contentContainer ">
-        <div id="summaryContent">
-
-        </div>
+        <div id="summaryContent"></div>
       </div>
       <div id="statsContent">
         <div class="grid-container">
-    <div class="grid-item">
-      <div class="label">Ball Possession</div>
-      <div class="value">74%</div>
-      <div class="value1">26%</div>
-      <div class="rectangle"></div>
-      <div class="rectangle1"></div>
-      <div class="backrectangle"></div>
-    </div>
+          <div class="grid-item">
+            <div class="label">Ball Possession</div>
+            <div class="value">74%</div>
+            <div class="value1">26%</div>
+            <div class="rectangle"></div>
+            <div class="rectangle1"></div>
+            <div class="backrectangle"></div>
+          </div>
 
-    <div class="grid-item">
-      <div class="label"><p>Goal Attempts</p></div>
-      <div class="value">16</div>
-      <div class="value1">9</div>
-      <div class="rectangle"></div>
-      <div class="rectangle1"></div>
-      <div class="backrectangle"></div>
-    </div>
+          <div class="grid-item">
+            <div class="label">Goal Attempts</div>
+            <div class="value">16</div>
+            <div class="value1">9</div>
+            <div class="rectangle"></div>
+            <div class="rectangle1"></div>
+            <div class="backrectangle"></div>
+          </div>
 
-    <div class="grid-item">
-      <div class="label"><p>Shots on Goal</p></div>
-      <div class="value">7</div>
-      <div class="value1">6</div>
-      <div class="rectangle"></div>
-      <div class="rectangle1"></div>
-          <div class="backrectangle"></div>
+          <div class="grid-item">
+            <div class="label">Shots on Goal</div>
+            <div class="value">7</div>
+            <div class="value1">6</div>
+            <div class="rectangle"></div>
+            <div class="rectangle1"></div>
+            <div class="backrectangle"></div>
+          </div>
+
+          <div class="grid-item">
+            <div class="label">Shots off Goal</div>
+            <div class="value">4</div>
+            <div class="value1">2</div>
+            <div class="rectangle"></div>
+            <div class="rectangle1"></div>
+            <div class="backrectangle"></div>
+          </div>
+
+          <div class="grid-item">
+            <div class="label">Corner Kicks</div>
+            <div class="value">12</div>
+            <div class="value1">5</div>
+            <div class="rectangle"></div>
+            <div class="rectangle1"></div>
+            <div class="backrectangle"></div>
+          </div>
+
+          <div class="grid-item">
+            <div class="label">Yellow Cards</div>
+            <div class="value">0</div>
+            <div class="value1">4</div>
+            <div class="rectangle"></div>
+            <div class="rectangle1"></div>
+            <div class="backrectangle"></div>
+          </div>
+
+          <div class="grid-item">
+            <div class="label">Fouls</div>
+            <div class="value">0</div>
+            <div class="value1">4</div>
+            <div class="rectangle"></div>
+            <div class="rectangle1"></div>
+            <div class="backrectangle"></div>
+          </div>
+
+          <div class="grid-item">
+            <div class="label">Passes</div>
+            <div class="value">150</div>
+            <div class="value1">90</div>
+            <div class="rectangle"></div>
+            <div class="rectangle1"></div>
+            <div class="backrectangle"></div>
+          </div>
         </div>
-
-    <div class="grid-item">
-      <div class="label"><p>Shots off Goal</p></div>
-      <div class="value">4</div>
-      <div class="value1">2</div>
-      <div class="rectangle"></div>
-      <div class="rectangle1"></div> 
-       <div class="backrectangle"></div>
-    </div>
-
-    <div class="grid-item">
-      <div class="label"><p>Corner Kicks</p></div>
-      <div class="value">12</div>
-      <div class="value1">5</div>
-      <div class="rectangle"></div>
-      <div class="rectangle1"></div>
-      <div class="backrectangle"></div>
-    </div>
-
-    <div class="grid-item">
-      <div class="label"><p>Yellow Cards</p></div>
-      <div class="value">0</div>
-      <div class="value1">4</div>
-      <div class="rectangle"></div>
-      <div class="rectangle1"></div> 
-           <div class="backrectangle"></div>
-    </div>
-
-    <div class="grid-item">
-      <div class="label"><p>Fouls</p></div>
-      <div class="value">0</div>
-      <div class="value1">4</div>
-      <div class="rectangle"></div>
-      <div class="rectangle1"></div>
-      <div class="backrectangle"></div>
-    </div>
-
-    <div class="grid-item">
-      <div class="label"><p>Passes</p></div>
-      <div class="value">150</div>
-      <div class="value1">90</div>
-      <div class="rectangle"></div>
-      <div class="rectangle1"></div>
-      <div class="backrectangle"></div>
-    </div>
-  </div>
       </div>
       <div id="lineupsContent"></div>
     </div>
@@ -181,8 +179,8 @@ export default {
             const divChild = document.createElement("div");
             const pleft = document.createElement("p");
             const pright = document.createElement("p");
+            const pin = document.createElement("p");
             const icon = document.createElement("div");
-            icon.id = "YellowCard";
             if (event.team === this.homeTeam) {
               divChild.classList.add("text");
             } else {
@@ -191,14 +189,75 @@ export default {
             }
 
             if (event.event === "card") {
+              if (event.type === "yellow") {
+                icon.id = "YellowCard";
+                if (divChild.classList.contains("right")) {
+                  pleft.innerHTML = event.player;
+                  pright.innerHTML = event.minute;
+                  divChild.appendChild(pleft);
+                  divChild.appendChild(icon);
+                  divChild.appendChild(pright);
+                } else {
+                  pleft.innerHTML = event.player;
+                  pright.innerHTML = event.minute;
+                  divChild.appendChild(pright);
+                  divChild.appendChild(icon);
+                  divChild.appendChild(pleft);
+                }
+              } else if (event.type === "Red") {
+                icon.id = "RedCard";
+                if (divChild.classList.contains("right")) {
+                  pleft.innerHTML = event.player;
+                  pright.innerHTML = event.minute;
+                  divChild.appendChild(pleft);
+                  divChild.appendChild(icon);
+                  divChild.appendChild(pright);
+                } else {
+                  pleft.innerHTML = event.player;
+                  pright.innerHTML = event.minute;
+                  divChild.appendChild(pright);
+                  divChild.appendChild(icon);
+                  divChild.appendChild(pleft);
+                }
+              }
+            } else if (event.event === "goal") {
+              icon.id = "goal";
+              icon.innerHTML = "GOAL";
+
               if (divChild.classList.contains("right")) {
                 pleft.innerHTML = event.player;
                 pright.innerHTML = event.minute;
+                divChild.appendChild(pleft);
+                divChild.appendChild(icon);
+                divChild.appendChild(pright);
+              } else {
+                pleft.innerHTML = event.player;
+                pright.innerHTML = event.minute;
+                divChild.appendChild(pright);
+                divChild.appendChild(icon);
+                divChild.appendChild(pleft);
+              }
+            } else if (event.event === "sub") {
+              icon.id = "sub";
+              icon.innerHTML = "SUB";
+              if (divChild.classList.contains("right")) {
+                pleft.innerHTML = event.out;
+                pright.innerHTML = event.minute;
+                pin.innerHTML = event.in;
+                divChild.appendChild(pleft);
+                divChild.appendChild(icon);
+                divChild.appendChild(pin);
+                divChild.appendChild(pright);
+              } else {
+                pleft.innerHTML = event.out;
+                pright.innerHTML = event.minute;
+                pin.innerHTML = event.in;
+                divChild.appendChild(pright);
+                divChild.appendChild(pin);
+                divChild.appendChild(icon);
+                divChild.appendChild(pleft);
               }
             }
-            divChild.appendChild(pleft);
-            divChild.appendChild(icon);
-            divChild.appendChild(pright);
 
             divPar.appendChild(divChild);
 
@@ -330,7 +389,7 @@ export default {
 #switch {
   margin-left: 16vw;
   width: 1240px;
-  height: 1800px;
+  height: auto;
   border-radius: 0px 15px 15px 15px;
   border: 5px solid var(--1-border-orange, #ff8730);
   background: var(--1-blue-boxes, #010d34);
@@ -356,7 +415,8 @@ footer {
   gap: 10px;
   margin: auto;
 }
-#statsContent,#lineupsContent{
+#statsContent,
+#lineupsContent {
   display: none;
 }
 .lineHalf {
@@ -411,14 +471,39 @@ footer {
   right: 5%; /* Adjust right position to match margin-left of the container */
 }
 
-
-
 #YellowCard {
   width: 19.05px;
   height: 28.95px;
   background: #f9e21b;
   border-radius: 5px;
   display: inline-block;
+}
+#RedCard {
+  width: 19.05px;
+  height: 28.95px;
+  background: #861000;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+#sub {
+  width: 70px;
+  height: 28.95px;
+  border-radius: 5px;
+  display: inline-block;
+  background: #263154;
+  font-size: 20px;
+  text-align: center;
+}
+
+#goal {
+  width: 70px;
+  height: 28.95px;
+  border-radius: 5px;
+  display: inline-block;
+  background: #263154;
+  font-size: 20px;
+  text-align: center;
 }
 
 .soccer-stats {
@@ -450,13 +535,12 @@ footer {
   color: #0066cc;
 }
 
-
 .grid-container {
   display: grid;
   grid-template-columns: 75vw;
-  grid-template-rows:10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh ;
+  grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10%;
   justify-content: center;
-  gap:20px ;
+  gap: 20px;
 }
 
 .grid-item {
@@ -464,17 +548,19 @@ footer {
   padding: 20px;
   border-radius: 5px;
   display: grid;
-  grid-template-columns: 36vw 36vw;
+  grid-template-columns: 40% 40%;
   grid-template-rows: 2vh 2vh 3vh;
   grid-gap: 1vh;
+  margin-left: 5%;
 }
 
 .label {
   color: #fff;
   font-weight: 700;
-  margin-bottom: 10px;
+
   grid-column-start: 1;
   grid-column-end: 3;
+  font-family: "DM Sans";
 }
 
 .value {
@@ -484,6 +570,8 @@ footer {
   grid-column-start: 1;
   grid-column-end: 1;
   text-align: left;
+
+  font-family: "DM Sans";
 }
 .value1 {
   color: #fff;
@@ -494,20 +582,16 @@ footer {
   text-align: right;
 }
 
-
-
-.rectangle{
+.rectangle {
   background-color: var(--2-Blue-boxes, #ff8730);
   grid-column-start: 1;
   grid-column-end: 1;
   border-radius: 2vw 0vw 0vw 2vw;
 }
-.rectangle1{
+.rectangle1 {
   background-color: var(--2-Blue-boxes, #ffffff);
   grid-column-start: 2;
   grid-column-end: 2;
   border-radius: 0vw 2vw 2vw 0vw;
 }
-
 </style>
-

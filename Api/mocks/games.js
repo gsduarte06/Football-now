@@ -139,7 +139,7 @@ export default
             "homePasses": 40, "awayPasses": 35
     }],
         "events": [
-            {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Coates S.", "minute": "15'"},
+
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Inacio G.", "minute": "22'"}
         ]
     },
@@ -233,7 +233,7 @@ export default
             "homePasses": 45, "awayPasses": 55
     }],
         "events": [
-            {"team" : "Sporting", "event": "card", "type": "yellowRed", "player": "Inacio G.", "minute": "51'"},
+            {"team" : "Sporting", "event": "card", "type": "Red", "player": "Inacio G.", "minute": "51'"},
         ]
     },
     {
@@ -750,6 +750,7 @@ export default
     }],
         "events": [
             {"team" : "Sporting", "event": "card", "type": "yellow", "player": "Neto", "minute": "90+11'"},
+            { "event": "half", "type": "Second Half", "minute": "90'"},
         ]
     },
     ]
