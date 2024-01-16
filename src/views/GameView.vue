@@ -28,9 +28,85 @@
 
     <div id="switch">
       <div id="contentContainer ">
-        <div id="summaryContent"></div>
+        <div id="summaryContent">
+
+        </div>
       </div>
-      <div id="statsContent"></div>
+      <div id="statsContent">
+        <div class="grid-container">
+    <div class="grid-item">
+      <div class="label">Ball Possession</div>
+      <div class="value">74%</div>
+      <div class="value1">26%</div>
+      <div class="rectangle"></div>
+      <div class="rectangle1"></div>
+      <div class="backrectangle"></div>
+    </div>
+
+    <div class="grid-item">
+      <div class="label"><p>Goal Attempts</p></div>
+      <div class="value">16</div>
+      <div class="value1">9</div>
+      <div class="rectangle"></div>
+      <div class="rectangle1"></div>
+      <div class="backrectangle"></div>
+    </div>
+
+    <div class="grid-item">
+      <div class="label"><p>Shots on Goal</p></div>
+      <div class="value">7</div>
+      <div class="value1">6</div>
+      <div class="rectangle"></div>
+      <div class="rectangle1"></div>
+          <div class="backrectangle"></div>
+        </div>
+
+    <div class="grid-item">
+      <div class="label"><p>Shots off Goal</p></div>
+      <div class="value">4</div>
+      <div class="value1">2</div>
+      <div class="rectangle"></div>
+      <div class="rectangle1"></div> 
+       <div class="backrectangle"></div>
+    </div>
+
+    <div class="grid-item">
+      <div class="label"><p>Corner Kicks</p></div>
+      <div class="value">12</div>
+      <div class="value1">5</div>
+      <div class="rectangle"></div>
+      <div class="rectangle1"></div>
+      <div class="backrectangle"></div>
+    </div>
+
+    <div class="grid-item">
+      <div class="label"><p>Yellow Cards</p></div>
+      <div class="value">0</div>
+      <div class="value1">4</div>
+      <div class="rectangle"></div>
+      <div class="rectangle1"></div> 
+           <div class="backrectangle"></div>
+    </div>
+
+    <div class="grid-item">
+      <div class="label"><p>Fouls</p></div>
+      <div class="value">0</div>
+      <div class="value1">4</div>
+      <div class="rectangle"></div>
+      <div class="rectangle1"></div>
+      <div class="backrectangle"></div>
+    </div>
+
+    <div class="grid-item">
+      <div class="label"><p>Passes</p></div>
+      <div class="value">150</div>
+      <div class="value1">90</div>
+      <div class="rectangle"></div>
+      <div class="rectangle1"></div>
+      <div class="backrectangle"></div>
+    </div>
+  </div>
+      </div>
       <div id="lineupsContent"></div>
     </div>
 
@@ -64,7 +140,7 @@ export default {
       document.getElementById(`${this.currentState}Content`).style.display = "none";
       document.getElementById(`${this.currentState}`).style.background = "#263154";
       document.getElementById(`${state}`).style.background = "#010D34";
-      document.getElementById(`${state}Content`).style.display = "block";
+      document.getElementById(`${state}Content`).style.display = "grid";
       this.currentState = state;
     },
 
@@ -280,7 +356,9 @@ footer {
   gap: 10px;
   margin: auto;
 }
-
+#statsContent,#lineupsContent{
+  display: none;
+}
 .lineHalf {
   position: relative; /* Add position relative to the container */
   margin-left: 10%;
@@ -333,6 +411,8 @@ footer {
   right: 5%; /* Adjust right position to match margin-left of the container */
 }
 
+
+
 #YellowCard {
   width: 19.05px;
   height: 28.95px;
@@ -340,4 +420,94 @@ footer {
   border-radius: 5px;
   display: inline-block;
 }
+
+.soccer-stats {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.team {
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  display: grid;
+  grid-template-rows: repeat(7, 1fr); /* Adjust the number based on the number of stats */
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.number {
+  font-weight: bold;
+}
+
+.percentage {
+  font-weight: bold;
+  color: #0066cc;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 75vw;
+  grid-template-rows:10vh 10vh 10vh 10vh 10vh 10vh 10vh 10vh ;
+  justify-content: center;
+  gap:20px ;
+}
+
+.grid-item {
+  text-align: center;
+  padding: 20px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 36vw 36vw;
+  grid-template-rows: 2vh 2vh 3vh;
+  grid-gap: 1vh;
+}
+
+.label {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 10px;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.value {
+  color: #fff;
+  font-weight: 700;
+  font-size: 28px;
+  grid-column-start: 1;
+  grid-column-end: 1;
+  text-align: left;
+}
+.value1 {
+  color: #fff;
+  font-weight: 700;
+  font-size: 28px;
+  grid-column-start: 2;
+  grid-column-end: 2;
+  text-align: right;
+}
+
+
+
+.rectangle{
+  background-color: var(--2-Blue-boxes, #ff8730);
+  grid-column-start: 1;
+  grid-column-end: 1;
+  border-radius: 2vw 0vw 0vw 2vw;
+}
+.rectangle1{
+  background-color: var(--2-Blue-boxes, #ffffff);
+  grid-column-start: 2;
+  grid-column-end: 2;
+  border-radius: 0vw 2vw 2vw 0vw;
+}
+
 </style>
+
