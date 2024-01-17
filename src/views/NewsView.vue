@@ -2,190 +2,163 @@
 <template>
   <div id="background">
     <Navbar></Navbar>
-  <div id="main-container">
-    <div id="flex-row-dd">
-      <span id="most-read">MOST READ</span
-      ><span id="top-news">TOP NEWS</span>
-      <div id="vector"></div>
-      <div id="rectangle"></div>
-      <button id="rectangle-1"></button>
-      <div id="rectangle-2">
-        <div id="flex-row-a">
-          <div id="rectangle-3"><img src="../assets/porto3" alt=""></div>
-          <span id="it-was-necessary-to-lose-fear"
-            >It was necessary to lose fear: Estrela da Amadora beats Boavista
-            (3-1)</span
-          >
+    <div id="main-container">
+      <div id="flex-row-dd">
+        <span id="most-read">MOST READ</span><span id="top-news">TOP NEWS</span>
+        <div id="vector"></div>
+        <div id="rectangle"></div>
+        <button id="rectangle-1"></button>
+        <div id="rectangle-2">
+          <div id="flex-row-a">
+            <div id="rectangle-3"><img src="../assets/porto3" alt="" /></div>
+            <span id="it-was-necessary-to-lose-fear"
+              >It was necessary to lose fear: Estrela da Amadora beats Boavista
+              (3-1)</span
+            >
+          </div>
+          <div id="flex-row-bd">
+            <div id="rectangle-4"></div>
+            <div id="rectangle-5"></div>
+            <div id="rectangle-6"></div>
+          </div>
+          <div id="flex-row">
+            <span id="fc-porto-beats-casa-pia"
+              >FC Porto beats Casa Pia (3-1) and catches Sporting one week before the
+              Classic</span
+            ><span id="frederico-varandas"
+              >Frederico Varandas: "There isn't a Sporting fan who isn't traumatized
+              <br />when they see João Pinheiro" </span
+            ><span id="vitoria-da-silva"
+              >Vitória da Silva: Sporting falls in Guimarães (2-3) with goals from Tiago,
+              André and Dani Silva
+            </span>
+          </div>
         </div>
-        <div id="flex-row-bd">
-          <div id="rectangle-4"></div>
-          <div id="rectangle-5"></div>
-          <div id="rectangle-6"></div>
-        </div>
-        <div id="flex-row">
-          <span id="fc-porto-beats-casa-pia"
-            >FC Porto beats Casa Pia (3-1) and catches Sporting one week before
-            the Classic</span
-          ><span id="frederico-varandas"
-            >Frederico Varandas: "There isn't a Sporting fan who isn't
-            traumatized <br />when they see João Pinheiro" </span
-          ><span id="vitoria-da-silva"
-            >Vitória da Silva: Sporting falls in Guimarães (2-3) with goals from
-            Tiago, André and Dani Silva
-          </span>
-        </div>
+        <div id="rectangle-7"></div>
+        <div id="rectangle-8"></div>
+        <div id="rectangle-9"></div>
+        <div id="rectangle-a"></div>
+        <div id="rectangle-b"></div>
+        <div id="rectangle-c"></div>
+        <div id="rectangle-d"></div>
+        <button id="rectangle-e"></button>
       </div>
-      <div id="rectangle-7"></div>
-      <div id="rectangle-8"></div>
-      <div id="rectangle-9"></div>
-      <div id="rectangle-a"></div>
-      <div id="rectangle-b"></div>
-      <div id="rectangle-c"></div>
-      <div id="rectangle-d"></div>
-      <button id="rectangle-e"></button>
-    </div>
-    <div id="flex-row-ce">
-      
-      <span id="breaking-news">BREAKING NEWS</span>
-      <div id="rectangle-11">
-        <div id="frame">
-          <div id="breaking-news-12">
-            <div id="minutes-ago-benfica">
-              <span id="minutes-ago">31 minutes ago<br /></span
-              ><span id="benfica-is-victorious"
-                >Benfica is victourious on another match</span
-              >
+      <div id="flex-row-ce">
+        <span id="breaking-news">BREAKING NEWS</span>
+        <div id="rectangle-11">
+          <div id="frame">
+            <div id="breaking-news-12">
+              <div id="minutes-ago-benfica">
+                <span id="minutes-ago">31 minutes ago<br /></span
+                ><span id="benfica-is-victorious"
+                  >Benfica is victourious on another match</span
+                >
+              </div>
+              <div id="rectangle-13"></div>
+              <div id="minutes-ago-porto">
+                <span id="minutes-ago-14">40 minutes ago<br /></span
+                ><span id="porto-loses-important"
+                  >Porto loses important game for champions
+                </span>
+              </div>
+              <div id="rectangle-15"></div>
+              <div id="minutes-ago-braga">
+                <span id="minutes-ago-16">43 minutes ago<br /></span
+                ><span id="braga-as-an-important"
+                  >Braga as an important match coming</span
+                >
+              </div>
+              <div id="rectangle-17"></div>
+              <div id="hour-ago-rosario-central">
+                <span id="hour-ago">1 hour ago<br /></span
+                ><span id="rosario-central-coach"
+                  >Rosario Central coach on Di María's return</span
+                >
+              </div>
+              <div id="rectangle-18"></div>
+              <div id="hours-ago-petit">
+                <span id="hours-ago">2 hours ago<br /></span
+                ><span id="petit-por-um-fio">Petit por um fio: mudança no Bessa</span>
+              </div>
+              <div id="rectangle-19"></div>
+              <div id="hours-ago-braga">
+                <span id="hours-ago-1a">3 hours ago<br /></span
+                ><span id="braga-as-an-important-match"
+                  >Braga as an important match coming</span
+                >
+              </div>
             </div>
-            <div id="rectangle-13"></div>
-            <div id="minutes-ago-porto">
-              <span id="minutes-ago-14">40 minutes ago<br /></span
-              ><span id="porto-loses-important"
-                >Porto loses important game for champions
+          </div>
+        </div>
+        <div class="div">
+          <div class="div-2">
+            <div class="div-3">
+              <span class="span">SPORTING</span
+              ><span class="span-2"
+                ><div class="div-4">Mais noticias do Sporting</div>
               </span>
             </div>
-            <div id="rectangle-15"></div>
-            <div id="minutes-ago-braga">
-              <span id="minutes-ago-16">43 minutes ago<br /></span
-              ><span id="braga-as-an-important"
-                >Braga as an important match coming</span
-              >
-            </div>
-            <div id="rectangle-17"></div>
-            <div id="hour-ago-rosario-central">
-              <span id="hour-ago">1 hour ago<br /></span
-              ><span id="rosario-central-coach"
-                >Rosario Central coach on Di María's return</span
-              >
-            </div>
-            <div id="rectangle-18"></div>
-            <div id="hours-ago-petit">
-              <span id="hours-ago">2 hours ago<br /></span
-              ><span id="petit-por-um-fio"
-                >Petit por um fio: mudança no Bessa</span
-              >
-            </div>
-            <div id="rectangle-19"></div>
-            <div id="hours-ago-braga">
-              <span id="hours-ago-1a">3 hours ago<br /></span
-              ><span id="braga-as-an-important-match"
-                >Braga as an important match coming</span
-              >
+            <div class="div-5">
+              <div class="div-6">
+                <div class="column">
+                  <img src="../assets/sporting1.png" />
+                </div>
+                <div class="column-2">
+                  <img src="../assets/sporting2.png" />
+                </div>
+                <div class="column-3">
+                  <img src="../assets/sporting3.png" />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="div">
-    <div class="div-2">
-      <div class="div-3">
-        <span class="span">SPORTING</span
-        ><span class="span-2"
-          ><div class="div-4">Mais noticias do Sporting</div>
-    </span>
-      </div>
-      <div class="div-5">
-        <div class="div-6">
-          <div class="column">
-            <img
-              src="../assets/sporting1.png"
-            />
+          <div class="div-7">
+            <div class="div-8">
+              <span class="span-3">PORTO</span
+              ><span class="span-4"
+                ><div class="div-9">Mais noticias do Porto</div>
+              </span>
+            </div>
+            <div class="div-10">
+              <div class="div-11">
+                <div class="column">
+                  <img src="../assets/porto1.png" />
+                </div>
+                <div class="column-4">
+                  <img src="../assets/porto2.png" />
+                </div>
+                <div class="column-5">
+                  <img src="../assets/porto3.png" />
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="column-2">
-            <img
-              src="../assets/sporting2.png"
-            />
-          </div>
-          <div class="column-3">
-            <img
-              src="../assets/sporting3.png"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="div-7">
-      <div class="div-8">
-        <span class="span-3">PORTO</span
-        ><span class="span-4"
-          ><div class="div-9">Mais noticias do Porto</div>
-         </span>
-      </div>
-      <div class="div-10">
-        <div class="div-11">
-          <div class="column">
-            <img
-              src="../assets/porto1.png"
-            />
-          </div>
-          <div class="column-4">
-            <img
-            src="../assets/porto2.png"
-            />
-          </div>
-          <div class="column-5">
-            <img
-            src="../assets/porto3.png"
-            />
+          <div class="div-12">
+            <div class="div-13">
+              <span class="span-5">BENFICA</span
+              ><span class="span-6"
+                ><div class="div-14">Mais noticias do Benfica</div>
+              </span>
+            </div>
+            <div class="div-15">
+              <div class="div-16">
+                <div class="column">
+                  <img src="../assets/benfica1.png" />
+                </div>
+                <div class="column-6">
+                  <img src="../assets/benfica2.png" />
+                </div>
+                <div class="column-7">
+                  <img src="../assets/benfica3.png" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="div-12">
-      <div class="div-13">
-        <span class="span-5">BENFICA</span
-        ><span class="span-6"
-          ><div class="div-14">Mais noticias do Benfica</div>
-        </span>
-      </div>
-      <div class="div-15">
-        <div class="div-16">
-          <div class="column">
-            <img
-            src="../assets/benfica1.png"
-            />
-          </div>
-          <div class="column-6">
-            <img
-            src="../assets/benfica2.png"
-            />
-          </div>
-          <div class="column-7">
-            <img
-            src="../assets/benfica3.png"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
+    <footer></footer>
   </div>
-</div>
-
-    
-    
-  </div>
-  <footer></footer>
-</div>  
-
-
 </template>
 
 <script>
@@ -200,10 +173,9 @@ export default {
 
 <style scoped>
 :root {
-  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Ubuntu, "Helvetica Neue", Helvetica, Arial, "PingFang SC",
-    "Hiragino Sans GB", "Microsoft Yahei UI", "Microsoft Yahei",
-    "Source Han Sans CN", sans-serif;
+  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
+    "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
+    "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
 }
 
 .div {
@@ -378,7 +350,6 @@ export default {
 }
 
 .div-11 {
-
   display: flex;
 }
 
@@ -524,7 +495,6 @@ export default {
   flex: 1;
 }
 
-
 #main-container {
   overflow: hidden;
 }
@@ -546,8 +516,8 @@ button {
   width: 1240px;
   height: 1593px;
   margin-top: 10vh;
-  margin-left: 2vw;
-  
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #flex-row-dd {
@@ -593,7 +563,6 @@ button {
   text-align: center;
   white-space: nowrap;
   z-index: 16;
-  
 }
 
 #vector {
@@ -602,8 +571,8 @@ button {
   height: 606px;
   top: 39.5px;
   left: -2.5px;
-  background: url(../assets/images/481a195e-8e51-4f52-8340-f47cd63f6a8f.png)
-    no-repeat center;
+  background: url(../assets/images/481a195e-8e51-4f52-8340-f47cd63f6a8f.png) no-repeat
+    center;
   background-size: cover;
   z-index: 29;
 }
@@ -891,8 +860,8 @@ button {
   height: 250px;
   top: 0;
   left: 500px;
-  background: url(../assets/images/724fab66-6863-4826-8d2c-0189449cc233.png)
-    no-repeat center;
+  background: url(../assets/images/724fab66-6863-4826-8d2c-0189449cc233.png) no-repeat
+    center;
   background-size: cover;
   z-index: 79;
 }
@@ -929,8 +898,8 @@ button {
   height: 25.263px;
   top: 5px;
   left: 697px;
-  background: url(../assets/images/9828f918-1823-4203-963d-edd7e1163b4b.png)
-    no-repeat center;
+  background: url(../assets/images/9828f918-1823-4203-963d-edd7e1163b4b.png) no-repeat
+    center;
   background-size: 100% 100%;
   z-index: 82;
 }
@@ -969,8 +938,8 @@ button {
   position: relative;
   width: 220px;
   height: 160px;
-  background: url(../assets/images/1b7f6907-09d0-4a75-b98b-d20a1b4416c0.png)
-    no-repeat center;
+  background: url(../assets/images/1b7f6907-09d0-4a75-b98b-d20a1b4416c0.png) no-repeat
+    center;
   background-size: cover;
   z-index: 84;
   border-radius: 15px;
@@ -981,8 +950,8 @@ button {
   position: relative;
   width: 218px;
   height: 160px;
-  background: url(../assets/images/9276cead-bff7-43cd-8f95-6d59228ea329.png)
-    no-repeat center;
+  background: url(../assets/images/9276cead-bff7-43cd-8f95-6d59228ea329.png) no-repeat
+    center;
   background-size: cover;
   z-index: 86;
   border-radius: 15px;
@@ -993,8 +962,8 @@ button {
   position: relative;
   width: 219px;
   height: 160px;
-  background: url(../assets/images/3b8a432a-efd1-4b07-b95d-3df0e4481db3.png)
-    no-repeat center;
+  background: url(../assets/images/3b8a432a-efd1-4b07-b95d-3df0e4481db3.png) no-repeat
+    center;
   background-size: cover;
   z-index: 85;
   border-radius: 15px;
@@ -1028,7 +997,6 @@ button {
   border: 5px solid #ff862f;
   z-index: 34;
   border-radius: 15px;
-;
 }
 
 #frame {
@@ -1317,8 +1285,8 @@ button {
   height: 36px;
   top: 0;
   left: 142px;
-  background: url(../assets/images/c68f53ce-5374-4528-b620-235e61372704.png)
-    no-repeat center;
+  background: url(../assets/images/c68f53ce-5374-4528-b620-235e61372704.png) no-repeat
+    center;
   background-size: cover;
   z-index: 37;
 }
@@ -1345,8 +1313,8 @@ button {
   height: 250px;
   top: 300px;
   left: 500px;
-  background: url(../assets/images/c97f7e3f-534d-4112-9ba4-a7b4b4be0237.png)
-    no-repeat center;
+  background: url(../assets/images/c97f7e3f-534d-4112-9ba4-a7b4b4be0237.png) no-repeat
+    center;
   background-size: cover;
   z-index: 68;
 }
@@ -1380,8 +1348,8 @@ button {
   height: 25.263px;
   top: 5px;
   left: 674px;
-  background: url(../assets/images/e17d2610-23b2-4255-a1b8-aa0394ea42a1.png)
-    no-repeat center;
+  background: url(../assets/images/e17d2610-23b2-4255-a1b8-aa0394ea42a1.png) no-repeat
+    center;
   background-size: 100% 100%;
   z-index: 71;
 }
@@ -1417,8 +1385,8 @@ button {
   position: relative;
   width: 220px;
   height: 160px;
-  background: url(../assets/images/46ebb3ff-c7a0-4fb9-90a8-8729168b8b68.png)
-    no-repeat center;
+  background: url(../assets/images/46ebb3ff-c7a0-4fb9-90a8-8729168b8b68.png) no-repeat
+    center;
   background-size: cover;
   z-index: 73;
   border-radius: 15px;
@@ -1428,8 +1396,8 @@ button {
   position: relative;
   width: 218px;
   height: 160px;
-  background: url(../assets/images/f7a8f4a1-9f91-4786-ae20-34e2fcaec4be.png)
-    no-repeat center;
+  background: url(../assets/images/f7a8f4a1-9f91-4786-ae20-34e2fcaec4be.png) no-repeat
+    center;
   background-size: cover;
   z-index: 74;
   border-radius: 15px;
@@ -1439,8 +1407,8 @@ button {
   position: relative;
   width: 219px;
   height: 160px;
-  background: url(../assets/images/10f4c17a-da83-4d64-b91a-ea7a6f252465.png)
-    no-repeat center;
+  background: url(../assets/images/10f4c17a-da83-4d64-b91a-ea7a6f252465.png) no-repeat
+    center;
   background-size: cover;
   z-index: 75;
   border-radius: 15px;
@@ -1451,8 +1419,8 @@ button {
   height: 250px;
   top: 600px;
   left: 500px;
-  background: url(../assets/images/22fb634f-156c-4f47-b39c-677b71666e47.png)
-    no-repeat center;
+  background: url(../assets/images/22fb634f-156c-4f47-b39c-677b71666e47.png) no-repeat
+    center;
   background-size: cover;
   z-index: 57;
 }
@@ -1486,8 +1454,8 @@ button {
   height: 25.263px;
   top: 5px;
   left: 686px;
-  background: url(../assets/images/79b3c437-e062-493b-946e-8657f08f22b0.png)
-    no-repeat center;
+  background: url(../assets/images/79b3c437-e062-493b-946e-8657f08f22b0.png) no-repeat
+    center;
   background-size: 100% 100%;
   z-index: 60;
 }
@@ -1523,8 +1491,8 @@ button {
   position: relative;
   width: 220px;
   height: 160px;
-  background: url(../assets/images/b4d60a9a-f49d-4e51-8cdf-905e722461e5.png)
-    no-repeat center;
+  background: url(../assets/images/b4d60a9a-f49d-4e51-8cdf-905e722461e5.png) no-repeat
+    center;
   background-size: cover;
   z-index: 62;
   border-radius: 15px;
@@ -1534,8 +1502,8 @@ button {
   position: relative;
   width: 218px;
   height: 160px;
-  background: url(../assets/images/c6f2986f-dd63-4da6-a11d-435cde2f72cc.png)
-    no-repeat center;
+  background: url(../assets/images/c6f2986f-dd63-4da6-a11d-435cde2f72cc.png) no-repeat
+    center;
   background-size: cover;
   z-index: 63;
   border-radius: 15px;
@@ -1545,12 +1513,10 @@ button {
   position: relative;
   width: 219px;
   height: 160px;
-  background: url(../assets/images/75f0d9c3-fca6-473e-ba19-df3f6a478d3b.png)
-    no-repeat center;
+  background: url(../assets/images/75f0d9c3-fca6-473e-ba19-df3f6a478d3b.png) no-repeat
+    center;
   background-size: cover;
   z-index: 64;
   border-radius: 15px;
 }
-
-
 </style>

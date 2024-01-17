@@ -107,96 +107,7 @@
       </div>
       <div id="lineupsContent">
         <div id="titleLineup">Starting Eleven</div>
-        <div id="lineupsContentInfo">
-          <div class="lineHalfLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[0].number }} {{ hometeamLineup[0].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[0].number }} {{ awayteamLineup[0].name }}</p>
-            </div>
-          </div>
-          <div class="lineLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[1].number }} {{ hometeamLineup[1].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[1].number }} {{ awayteamLineup[1].name }}</p>
-            </div>
-          </div>
-          <div class="lineHalfLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[2].number }} {{ hometeamLineup[2].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[2].number }} {{ awayteamLineup[2].name }}</p>
-            </div>
-          </div>
-          <div class="lineLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[3].number }} {{ hometeamLineup[3].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[3].number }} {{ awayteamLineup[3].name }}</p>
-            </div>
-          </div>
-          <div class="lineHalfLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[4].number }} {{ hometeamLineup[4].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[4].number }} {{ awayteamLineup[4].name }}</p>
-            </div>
-          </div>
-          <div class="lineLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[5].number }} {{ hometeamLineup[5].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[5].number }} {{ awayteamLineup[5].name }}</p>
-            </div>
-          </div>
-          <div class="lineHalfLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[6].number }} {{ hometeamLineup[6].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[6].number }} {{ awayteamLineup[6].name }}</p>
-            </div>
-          </div>
-          <div class="lineLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[7].number }} {{ hometeamLineup[7].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[7].number }} {{ awayteamLineup[7].name }}</p>
-            </div>
-          </div>
-          <div class="lineHalfLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[8].number }} {{ hometeamLineup[8].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[8].number }} {{ awayteamLineup[8].name }}</p>
-            </div>
-          </div>
-          <div class="lineLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[9].number }} {{ hometeamLineup[9].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[9].number }} {{ awayteamLineup[9].name }}</p>
-            </div>
-          </div>
-          <div class="lineHalfLineup">
-            <div class="text">
-              <p>{{ hometeamLineup[10].number }} {{ hometeamLineup[10].name }}</p>
-            </div>
-            <div class="text right">
-              <p>{{ awayteamLineup[10].number }} {{ awayteamLineup[10].name }}</p>
-            </div>
-          </div>
-        </div>
+        <div id="lineupsContentInfo"></div>
       </div>
     </div>
 
@@ -246,6 +157,7 @@ export default {
         this.score = match.homeScore + " - " + match.awayScore;
         this.hometeamLineup = match.startLineupHome;
         this.awayteamLineup = match.startLineupAway;
+        this.buildLineUp();
 
         match.events.forEach((event) => {
           if (event.event === "half") {
@@ -366,6 +278,37 @@ export default {
       }
     },
 
+    buildLineUp() {
+      document.getElementById("lineupsContentInfo").innerHTML = "";
+      for (let index = 0; index < 11; index++) {
+        var divOut = document.createElement("div");
+        if ((index + 1) % 2 != 0) {
+          divOut.classList = "lineHalfLineup";
+        } else {
+          divOut.classList = "lineLineup";
+        }
+
+        const pLeft = document.createElement("p");
+        pLeft.innerHTML =
+          this.hometeamLineup[index].number + " " + this.hometeamLineup[index].name;
+
+        const pRight = document.createElement("p");
+        pRight.innerHTML =
+          this.awayteamLineup[index].number + " " + this.awayteamLineup[index].name;
+
+        var divChildLeft = document.createElement("div");
+        divChildLeft.classList = "text";
+        divChildLeft.appendChild(pLeft);
+        var divChildRight = document.createElement("div");
+        divChildRight.classList = "text right";
+        divChildRight.appendChild(pRight);
+
+        divOut.appendChild(divChildLeft);
+        divOut.appendChild(divChildRight);
+        console.log(divOut);
+        document.getElementById("lineupsContentInfo").appendChild(divOut);
+      }
+    },
     async fecthData() {
       await this.gameStore.fetchGames();
       this.match = this.gameStore.getGameEvents(1);

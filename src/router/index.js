@@ -3,6 +3,9 @@ import Landing from '../views/LandingView.vue'
 import Login from '../views/LoginView.vue'
 import Game from '../views/GameView.vue'
 import Main from '../views/MainView.vue'
+import News from '../views/NewsView.vue'
+//import Table from '../views/ClassificationView.vue'
+import { UserStore } from '@/stores/users';
 
 
 const router = createRouter({
@@ -39,17 +42,30 @@ const router = createRouter({
       meta: {
         title: 'Main'
       }
-    }
+    },
+    {
+      path: '/news',
+      name: 'News',
+      component: News,
+      meta: {
+        title: 'News'
+      }
+    },
   ]
-})
+});
+router.beforeEach((to, from) => {
+  // instead of having to check every route record with
+  // to.matched.some(record => record.meta.requiresAuth)
 
-router.beforeEach((to, from, next) => {
-  // EXTRA: muda o titulo da tab no browser, consoante a rota
-  if (to.meta.title) {
-    document.title = to.meta.title
+  if (to.meta.requiresAuth && !UserStore().getLoggedInUser) {
+    // this route requires auth, check if logged in
+    // if not, redirect to login page.
+    return {
+      path: "/login",
+      // save the location we were at to come back later
+      query: { redirect: to.fullPath },
+    };
   }
-
-  next()
-})
+});
 
 export default router

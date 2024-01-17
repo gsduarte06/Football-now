@@ -57,38 +57,11 @@
 
     </div>
   </div>
-<div id="account">
-  <div id="close"><img src="../assets/x.png" alt=""></div>
-    <div id="Name">
-        <div id="Icon"></div>
-        <p>Name</p>
-    </div>
-    <div id="Team">
-      <div id="team"><img src="../assets/benfica_logo.png" alt=""><p>SL BENFICA</p></div>
-      <div id="change"><img src="../assets/scroll.png" alt=""></div>
-    </div>
-    <div id="Inputs">
-      <input id="currentpsw" type="text" placeholder="Current Password">
-      <input id="newpsw" type="text" placeholder="New Password">
-    </div>
-    <div id="Buttons">
-    <button id="Change">CHANGE</button>
-    <button id="Logout">LOG OUT</button>
-    </div>
-</div>
+
 </template>
 
 <script>
-
-import { UserStore } from "@/stores/users";
-
-
 export default {
-    data() {
-      return {
-        UserStore: UserStore(),
-      }
-    },
     methods: {
     openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -203,114 +176,7 @@ navigate(Page){
   color: #f1f1f1;
 }
 
-#close{
-  width: 34px;
-height: 34px;
-border-radius: 0px 0px 0px 10px;
-background-color: #713205;
-float: right;
-}
-
-#account{
-  position: fixed;
-  right:0;  
-  top:0;
-  display:none;
-width: 500px;
-height: 700px;
-border-radius: 0px 0px 10px 10px;
-background: #B25200;
-justify-content: center;
-text-align: center;
-}
-
-#Name{
-  padding-top: 30px;
-}
-
-#Icon{
-width: 150px;
-height: 150px;
-border-radius: 100px;
-background-color: #582900;
-margin-left: 175px;
-margin-right: 175px;
-
-}
-
-#Team{
-  margin-left: 75px;
-  margin-right: 75px;
-  width: 350px;
-  height: 114px;
-  display: grid;
-  grid-template-columns: 280px 70px;
-}
-
-#team{
-  width: 280px;
-height: 100px;
-border-radius: 10px 0px 0px 10px;
-background: var(--4-Blue-boxes, #9CAAD3);
-display: grid;
-grid-template-columns: 100px 180px;
-}
-#team img{
-  width: 100px;
-height: 100px;
-
-}
-
-#team p{
-font-size: 33px
-
-}
 
 
-#change img{
-  margin-top: 40px;
 
-}
-
-#change{
-  width: 70px;
-height: 100px;
-border-radius: 0px 10px 10px 0px;
-background: var(--4-Blue-boxes, #9CAAD3);
-}
-
-#Inputs p{
-  font-size: 20px;
-}
-
-
-#currentpsw{
-  width: 350px;
-height: 30px;
-margin-top: 20px;
-border-radius: 10px;
-background: #EBBA90;
-}
-#newpsw{
-  width: 350px;
-height: 30px;
-margin-top: 10px;
-
-border-radius: 10px;
-background: #EBBA90;
-}
-
-#Change{
-  width: 304px;
-height: 38px;
-margin-top: 30px;
-font-size: 20px;
-}
-
-#Logout{
-  width: 304px;
-height: 48px;
-margin-top: 10px;
-font-size: 30px;
-}
 </style>
