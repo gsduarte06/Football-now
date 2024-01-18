@@ -7,7 +7,6 @@
 </div>
 
   <a @click="navigate('Main')"><p>Home</p></a>
-  <a @click="navigate('About')"><p>About</p></a>
   <a @click="navigate('News')"><p>News</p></a>
   <a @click="navigate('Matches')"><p>Matches</p></a>
 </div>
@@ -22,8 +21,7 @@
         id="Searchicon"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 35 35"
-        fill="none"
-      >
+        fill="none">
         <g clip-path="url(#clip0_518_15259)">
           <path
             d="M33.9676 29.8688L27.1251 23.6188C26.8655 23.3822 26.6957 23.0633 26.6447 22.7159C26.5937 22.3686 26.6645 22.0143 26.8451 21.7132C28.6433 18.6898 29.2746 15.1145 28.6203 11.6589C27.966 8.20333 26.0711 5.10536 23.2917 2.947C20.5123 0.788636 17.0396 -0.281564 13.5261 -0.0625459C10.0126 0.156472 6.69999 1.64963 4.21072 4.13642C1.72144 6.62321 0.226788 9.93247 0.0075505 13.4425C-0.211687 16.9525 0.859583 20.4217 3.0201 23.1984C5.18062 25.975 8.28169 27.868 11.7407 28.5216C15.1997 29.1753 18.7787 28.5446 21.8051 26.7482C22.1065 26.5677 22.4611 26.497 22.8088 26.548C23.1565 26.599 23.4758 26.7685 23.7126 27.0279L30.0563 34.0209C30.3269 34.3178 30.6566 34.555 31.0243 34.7173C31.3919 34.8796 31.7894 34.9634 32.1913 34.9634C32.5933 34.9634 32.9908 34.8796 33.3584 34.7173C33.7261 34.555 34.0557 34.3178 34.3263 34.0209C34.8379 33.4212 35.0918 32.644 35.0328 31.8583C34.9738 31.0725 34.6067 30.3419 34.0113 29.8251L33.9676 29.8688ZM14.5688 25.3671C12.4323 25.3671 10.3437 24.7344 8.56703 23.5489C6.79033 22.3635 5.40526 20.6785 4.58685 18.7069C3.76844 16.7353 3.55342 14.5656 3.96896 12.4719C4.38451 10.3783 5.41197 8.45471 6.9215 6.94424C8.43103 5.43378 10.3549 4.40424 12.4499 3.98572C14.545 3.5672 16.7172 3.77849 18.6921 4.5929C20.667 5.4073 22.3559 6.78826 23.5454 8.56126C24.7349 10.3343 25.3716 12.4197 25.3751 14.5541C25.3774 15.9733 25.0996 17.3789 24.5575 18.6907C24.0155 20.0025 23.2199 21.1947 22.2162 22.199C21.2125 23.2033 20.0205 24 18.7083 24.5436C17.396 25.0872 15.9894 25.3671 14.5688 25.3671Z"
@@ -52,29 +50,33 @@
         />
       </svg>
 
-      <img src=" @\assets\user.png" alt="" id= "User"></img>
+      <img src=" @\assets\user.png" alt="" id= "User" @click="openModal()"></img>
 
 
     </div>
   </div>
 <div id="account">
-  <div id="close"><img src="../assets/x.png" alt=""></div>
+  <div id="close"><img src="../assets/x.png" alt="" @click="closeModal()"></div>
     <div id="Name">
-        <div id="Icon"></div>
-        <p>Name</p>
+        <img src=" @\assets\user.png" alt="" id= "Icon" ></img>
+        <p>{{username}}</p>
     </div>
     <div id="Team">
-      <div id="team"><img src="../assets/benfica_logo.png" alt=""><p>SL BENFICA</p></div>
-      <div id="change"><img src="../assets/scroll.png" alt=""></div>
+      <select name="clubs" id="clubs" @change="onChange($event)">
+        <option value="benfica">Benfica</option>
+        <option value="porto">Porto</option>
+        <option value="sporting">Sporting</option>
+        <option value="braga">Braga</option>
+      </select>
     </div>
     <div id="Inputs">
-      <input id="currentpsw" type="text" placeholder="Current Password">
-      <input id="newpsw" type="text" placeholder="New Password">
+      <input id="currentpsw" type="password" placeholder="Current Password" v-model="currentPW" required>
+      <input id="newpsw" type="password" placeholder="New Password" v-model="newPW" required>
     </div>
     <div id="Buttons">
-    <button id="Change">CHANGE</button>
-    <button id="Logout">LOG OUT</button>
-    </div>
+    <button id="Change" @click="changePW()">Change</button>
+    <button id="Logout" @click="Logout()">Logout</button>
+    </div>
 </div>
 </template>
 
@@ -86,24 +88,50 @@ import { UserStore } from "@/stores/users";
 export default {
     data() {
       return {
-        UserStore: UserStore(),
+        userStore: UserStore(),
+        currentPW:"",
+        newPW:"",
+        username: "",
       }
     },
     methods: {
-    openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.addEventListener("mouseup", e => {
-      if( !(e.target.nodeName === "a")){
-        document.getElementById("mySidenav").style.width = "0";
-      }
-    })
-},
+      Logout(){
+        this.$router.push({ name: "Login" });
+      },
+              openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.addEventListener("mouseup", e => {
+                if( !(e.target.nodeName === "a")){
+                  document.getElementById("mySidenav").style.width = "0";
+                }
+              })
+          },
+          openModal(){
+                document.getElementById("account").style.display="block";
+          },
+          closeModal(){
+          document.getElementById("account").style.display="none";
+          },
+          onChange(event){
+                this.userStore.setFavoutiteTeam(event.target.value);
+          },
+          navigate(Page){
+              this.$router.push({ name: `${Page}` });
+          },
 
-navigate(Page){
-    this.$router.push({ name: `${Page}` });
-},
+          changePW(){
+            console.log(this.userStore.getLoggedInUser());
+              if(this.userStore.getLoggedInUser().password === this.currentPW){
+                this.userStore.setPassword(this.newPW);
+              }else{
+                alert("Current password doesn't match")
+              }
+          }
     },
 
+  mounted(){
+    this.username = this.userStore.getLoggedInUser().username;
+  }
 }
 
 </script>
@@ -239,32 +267,25 @@ margin-right: 175px;
 }
 
 #Team{
-  margin-left: 75px;
-  margin-right: 75px;
+  margin-left: auto;
+  margin-right: auto;
   width: 350px;
-  height: 114px;
-  display: grid;
-  grid-template-columns: 280px 70px;
+  height: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 
-#team{
-  width: 280px;
-height: 100px;
-border-radius: 10px 0px 0px 10px;
+#clubs{
+  width: 100%;
+height: auto;
+border-radius: 10px 10px 10px 10px;
 background: var(--4-Blue-boxes, #9CAAD3);
 display: grid;
-grid-template-columns: 100px 180px;
-}
-#team img{
-  width: 100px;
-height: 100px;
-
+grid-template-columns: 100px ;
+font-size: 33px;
+font-family:"DM Sans";
 }
 
-#team p{
-font-size: 33px
-
-}
 
 
 #change img{
@@ -274,43 +295,44 @@ font-size: 33px
 
 #change{
   width: 70px;
-height: 100px;
+height:   auto;
 border-radius: 0px 10px 10px 0px;
 background: var(--4-Blue-boxes, #9CAAD3);
 }
 
-#Inputs p{
-  font-size: 20px;
+#Inputs input{
+  font-size: 25px;
 }
 
 
 #currentpsw{
   width: 350px;
-height: 30px;
-margin-top: 20px;
-border-radius: 10px;
-background: #EBBA90;
+  height: auto;
+  margin-top: 20px;
+  border-radius: 10px;
+  background: #EBBA90;
+  font-size: 25px;
 }
 #newpsw{
   width: 350px;
-height: 30px;
+height: auto;
 margin-top: 10px;
-
 border-radius: 10px;
 background: #EBBA90;
+font-size: 25px;
 }
 
 #Change{
   width: 304px;
-height: 38px;
+height: auto;
 margin-top: 30px;
-font-size: 20px;
+font-size: 25px;
 }
 
 #Logout{
   width: 304px;
-height: 48px;
-margin-top: 10px;
-font-size: 30px;
+height: auto;
+margin-top: 5px;
+font-size: 25px;
 }
 </style>

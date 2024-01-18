@@ -1,7 +1,10 @@
 <!-- YourVueComponent.vue -->
 <template>
   <div id="background">
-    <Navbar></Navbar>
+    <div id="navbar">
+      <Navbar></Navbar>
+    </div>
+
     <div id="main-container">
       <div id="flex-row-dd">
         <span id="most-read">MOST READ</span><span id="top-news">TOP NEWS</span>
@@ -172,12 +175,6 @@ export default {
 </script>
 
 <style scoped>
-:root {
-  --default-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu,
-    "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB",
-    "Microsoft Yahei UI", "Microsoft Yahei", "Source Han Sans CN", sans-serif;
-}
-
 .div {
   display: flex;
   max-width: 740px;

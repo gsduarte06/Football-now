@@ -34,8 +34,8 @@
         <div class="grid-container">
           <div class="grid-item">
             <div class="label">Ball Possession</div>
-            <div class="value">74%</div>
-            <div class="value1">26%</div>
+            <div class="value">{{ ballPossesionHome }}%</div>
+            <div class="value1">{{ ballPossesionAway }}%</div>
             <div class="rectangle"></div>
             <div class="rectangle1"></div>
             <div class="backrectangle"></div>
@@ -43,8 +43,8 @@
 
           <div class="grid-item">
             <div class="label">Goal Attempts</div>
-            <div class="value">16</div>
-            <div class="value1">9</div>
+            <div class="value">{{ GoalAttempsHome }}</div>
+            <div class="value1">{{ GoalAttempsAway }}</div>
             <div class="rectangle"></div>
             <div class="rectangle1"></div>
             <div class="backrectangle"></div>
@@ -52,8 +52,8 @@
 
           <div class="grid-item">
             <div class="label">Shots on Goal</div>
-            <div class="value">7</div>
-            <div class="value1">6</div>
+            <div class="value">{{ shotsOnGoalHome }}</div>
+            <div class="value1">{{ shotsOnGoalAway }}</div>
             <div class="rectangle"></div>
             <div class="rectangle1"></div>
             <div class="backrectangle"></div>
@@ -61,8 +61,8 @@
 
           <div class="grid-item">
             <div class="label">Shots off Goal</div>
-            <div class="value">4</div>
-            <div class="value1">2</div>
+            <div class="value">{{ shotsOffGoalHome }}</div>
+            <div class="value1">{{ shotsOffGoalAway }}</div>
             <div class="rectangle"></div>
             <div class="rectangle1"></div>
             <div class="backrectangle"></div>
@@ -70,8 +70,8 @@
 
           <div class="grid-item">
             <div class="label">Corner Kicks</div>
-            <div class="value">12</div>
-            <div class="value1">5</div>
+            <div class="value">{{ cornersHome }}</div>
+            <div class="value1">{{ cornersAway }}</div>
             <div class="rectangle"></div>
             <div class="rectangle1"></div>
             <div class="backrectangle"></div>
@@ -79,8 +79,8 @@
 
           <div class="grid-item">
             <div class="label">Yellow Cards</div>
-            <div class="value">0</div>
-            <div class="value1">4</div>
+            <div class="value">{{ yellowCardsHome }}</div>
+            <div class="value1">{{ yellowCardsAway }}</div>
             <div class="rectangle"></div>
             <div class="rectangle1"></div>
             <div class="backrectangle"></div>
@@ -88,8 +88,8 @@
 
           <div class="grid-item">
             <div class="label">Fouls</div>
-            <div class="value">0</div>
-            <div class="value1">4</div>
+            <div class="value">{{ foulsHome }}</div>
+            <div class="value1">{{ foulsAway }}</div>
             <div class="rectangle"></div>
             <div class="rectangle1"></div>
             <div class="backrectangle"></div>
@@ -97,8 +97,8 @@
 
           <div class="grid-item">
             <div class="label">Passes</div>
-            <div class="value">150</div>
-            <div class="value1">90</div>
+            <div class="value">{{ homePasses }}</div>
+            <div class="value1">{{ awayPasses }}</div>
             <div class="rectangle"></div>
             <div class="rectangle1"></div>
             <div class="backrectangle"></div>
@@ -130,6 +130,22 @@ export default {
       score: "0-0",
       hometeamLineup: [],
       awayteamLineup: [],
+      ballPossesionHome: "",
+      ballPossesionAway: "",
+      GoalAttempsHome: "",
+      GoalAttempsAway: "",
+      shotsOnGoalHome: "",
+      shotsOnGoalAway: "",
+      shotsOffGoalHome: "",
+      shotsOffGoalAway: "",
+      cornersAway: "",
+      cornersHome: "",
+      yellowCardsAway: "",
+      yellowCardsHome: "",
+      foulsHome: "",
+      foulsAway: "",
+      homePasses: "",
+      awayPasses: "",
       gameStore: UseGameStore(),
       index: 0,
     };
@@ -157,6 +173,26 @@ export default {
         this.score = match.homeScore + " - " + match.awayScore;
         this.hometeamLineup = match.startLineupHome;
         this.awayteamLineup = match.startLineupAway;
+        var stats = match.stats;
+
+        stats.forEach((stat) => {
+          this.ballPossesionHome = stat.homeBallPossession;
+          this.ballPossesionAway = 100 - stat.homeBallPossession;
+          this.GoalAttempsHome = stat.homeGoalAttempts;
+          this.GoalAttempsAway = stat.awayGoalAttempts;
+          this.shotsOffGoalHome = stat.homeShotsOffGoal;
+          this.shotsOffGoalAway = stat.awayShotsOffGoal;
+          this.shotsOnGoalHome = stat.homeShotsOnGoal;
+          this.shotsOnGoalAway = stat.awayShotsOnGoal;
+          this.cornersHome = stat.homeCornerKicks;
+          this.cornersAway = stat.awayCornerKicks;
+          this.yellowCardsHome = stat.homeYellow;
+          this.yellowCardsAway = stat.awayYellow;
+          this.foulsHome = stat.homeFouls;
+          this.foulsAway = stat.awayFouls;
+          this.homePasses = stat.homePasses;
+          this.awayPasses = stat.awayPasses;
+        });
         this.buildLineUp();
 
         match.events.forEach((event) => {
